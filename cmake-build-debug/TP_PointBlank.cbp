@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="TP_PointBlank"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TP_PointBlank">
+				<Option output="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/TP_PointBlank.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include/c++/8.2.1/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_PointBlank"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="TP_PointBlank/fast">
+				<Option output="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/TP_PointBlank.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include/c++/8.2.1"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include/c++/8.2.1/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include/c++/8.2.1/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.2.1/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 TP_PointBlank/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;C:/dev/WSLibGraphic/TP_PointBlank/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/Component/Texture.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/Component/Texture.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/Component/Vector3.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/Component/Vector3.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/GameObject.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/GameObject.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/Primitive/Cube.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/GameObject/Primitive/Cube.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Jeu/Jeu.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Jeu/Jeu.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Manager/LevelManager.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Manager/LevelManager.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Manager/PlayerManager.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Manager/PlayerManager.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Player/Input.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Player/Input.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Player/Player.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/Player/Player.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/main.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/utils/sdlglutils.cpp">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/src/utils/sdlglutils.h">
+			<Option target="TP_PointBlank"/>
+		</Unit>
+		<Unit filename="C:/dev/WSLibGraphic/TP_PointBlank/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
