@@ -10,7 +10,7 @@
 class Player: public Cube {
 
     int id;
-    Input input;
+    SDL_Joystick* controller;
 
 public:
     void Update();

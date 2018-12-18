@@ -10,6 +10,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <SDL2/SDL_mixer.h>
 #include <string>
+#include "../Manager/InputManager.h"
 
 class Menu {
 

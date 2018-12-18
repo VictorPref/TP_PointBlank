@@ -31,6 +31,8 @@ void Menu::Erase() {
 
 void Menu::UpdateModel(SDL_Event *event) {
 
+    Input input = InputManager::getInstance()->GetKeysInput(gGameController);
+
     if(event->type == SDL_QUIT){
         isRunning = false;
         selectedMenuItem = -1;
@@ -57,11 +59,14 @@ void Menu::UpdateModel(SDL_Event *event) {
         }
 
 
-        if (event->type == SDL_JOYBUTTONDOWN) {
-            if (event->jbutton.button == SDL_CONTROLLER_BUTTON_A)
-            {
-                isRunning = false;
-            }
+        if(SDL_JoystickGetButton(gGameController, SDL_CONTROLLER_BUTTON_A) > 0 )
+        {
+            isRunning = false;
+        }
+
+        if( SDL_JoystickGetAxis(gGameController, 3) > 10000 )
+        {
+            input.Show();
         }
     }
 
@@ -85,6 +90,7 @@ void Menu::UpdateModel(SDL_Event *event) {
             isRunning = false;
         }
     }
+
 }
 
 void Menu::Draw() {

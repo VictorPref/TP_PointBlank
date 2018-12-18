@@ -2,7 +2,16 @@
 #include <SDL2/SDL.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-int main(int argc, char** argv) {
-    std::cout << "Hello, World!" << std::endl;
+#include "Menu/Menu.h"
+int main(int ergc, char** args) {
+
+    int width = 1600, height = 900;
+
+    Menu menu{width,height};
+
+    menu.Init();
+    menu.Start();
+    menu.Clean();
+
     return 0;
 }
