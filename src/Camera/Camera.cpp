@@ -27,3 +27,14 @@ void Camera::LookDown() {
     if(angleXRotationCamera < angleMaxView)
         angleXRotationCamera++;
 }
+
+void Camera::Look() {
+
+    gluLookAt(positionXPlayer,positionYPlayer, positionZPlayer,positionXPlayer, positionYPlayer+1, positionZPlayer, 0, 0, 1);
+
+}
+
+Camera::Camera(float positionXPlayer, float positionYPlayer, float positionZPlayer) : positionXPlayer(positionXPlayer),
+                                                                                      positionYPlayer(positionYPlayer),
+                                                                                      positionZPlayer(
+                                                                                              positionZPlayer) {}
