@@ -8,6 +8,8 @@
 #include <SDL2/SDL.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <random>
+#include <time.h>
 #include "../Player/Player.h"
 #include "../Manager/PlayerManager.h"
 #include "../GameObject/GameObject.h"
@@ -21,11 +23,13 @@ public:
     void initialisation();
     void demarrerJeu();
     void nettoyer();
+	SDL_Window* win;
+
 
 private:
-    void effacer(void);
+    void effacer();
     void dessinerSurRender();
-    void Update(void);
+    void Update();
 };
 
 

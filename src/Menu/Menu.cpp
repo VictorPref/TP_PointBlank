@@ -114,6 +114,10 @@ void Menu::Init() {
     {
         printf( "SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError() );
     }
+    else{
+        // set channel 1 to half volume
+        Mix_Volume(-1,30);
+    }
 
     gMusic = Mix_LoadWAV("assets/music/background.wav");
     if(!gMusic)
