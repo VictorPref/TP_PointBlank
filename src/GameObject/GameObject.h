@@ -22,9 +22,8 @@ protected:
     Vector3 color;
     Texture texture;
 
-
     GLuint idGameObject;
-   std::string pathTexture;
+    std::string pathTexture;
 
 
 public:
