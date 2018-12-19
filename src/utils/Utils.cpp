@@ -13,7 +13,7 @@
 #include "sdlglutils.h"
 #include "../GameObject/Primitive/Cube.h"
 
-
+std::vector<GameObject*> Utils::level;
 void Utils::MakeWhiteSquare(float w, float h, float x, float y, float angle, bool darker)
 {
 	int clr = 255;
@@ -74,8 +74,8 @@ void Utils::MakeWhiteSquare(float w, float h, float x, float y, float angle, boo
 
 void Utils::GenerateWorld(int timeOfDay)
 {
-	std::vector<Cube*> cubeList;
-	std::vector<Cube*> cubeList2;
+	std::vector<GameObject*> cubeList;
+	std::vector<GameObject*> cubeList2;
 	for (int i = 0; i < 18; i++) {
 		for (int k = 0; k < 8; k++) {
 			int r = 1;
@@ -154,19 +154,29 @@ void Utils::GenerateWorld(int timeOfDay)
 		
 		Utils::MakeSkybox(timeOfDay, 175, 0, 0, 0);
 		//effacer le tampon d’affichage
-		for (Cube *c : cubeList) {
+		for (GameObject *c : cubeList) {
 			c->draw();
+			level.push_back(c);
 		}
 		
-		glPushMatrix();
-		glTranslated(12.5, 35, 0);
-		glRotated(180, 0, 0, 1);
-		for (Cube *c : cubeList2) {
+		//glPushMatrix();
+		//glTranslated(12.5, 35, 0);
+	//	glRotated(180, 0, 0, 1);
+		for (GameObject *c : cubeList2) {
+			Vector3 t(12.5,35,0);
+			Vector3 q =c->getTransform();
+			c->setTransform(q+t);
+			c->setRotation(Vector3(0,0,180));
 			c->draw();
+			level.push_back(c);
 		}
 		
-		glPopMatrix();
+	//	glPopMatrix();
 	}
+
+
+
+
 	
 }
 
@@ -454,4 +464,8 @@ Utils::Direction Utils::ChooseDirection(Utils::Direction &lastDir)
 			break;
 	}
 	return toRet;
+}
+
+const std::vector<GameObject *> &Utils::getLevel() const {
+	return level;
 }

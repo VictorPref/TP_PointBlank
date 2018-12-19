@@ -15,8 +15,8 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
     glColor3f(color.getX(), 0, 0);
     glVertex3d(0, 0, 0);
     glVertex3d(scale.getX(), 0, 0);
-    glVertex3d(scale.getX(), -scale.getY(), 0);
-    glVertex3d(0, -scale.getY(), 0);
+    glVertex3d(scale.getX(), scale.getY(), 0);
+    glVertex3d(0, scale.getY(), 0);
     glEnd();
 
     glBegin(GL_QUADS);
@@ -31,25 +31,25 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
     glColor3f(0, 0, 0);
     glVertex3d(scale.getX(), 0, 0);
     glVertex3d(scale.getX(), 0, scale.getZ());
-    glVertex3d(scale.getX(), -scale.getY(), scale.getZ());
-    glVertex3d(scale.getX(), -scale.getY(), 0);
+    glVertex3d(scale.getX(), scale.getY(), scale.getZ());
+    glVertex3d(scale.getX(), scale.getY(), 0);
 
     glEnd();
 
     glBegin(GL_QUADS);
     glColor3f(color.getX(), 0, color.getZ());
     glVertex3d(0, 0, 0);
-    glVertex3d(0, -scale.getY(), 0);
-    glVertex3d(0, -scale.getY(), scale.getZ());
+    glVertex3d(0, scale.getY(), 0);
+    glVertex3d(0, scale.getY(), scale.getZ());
     glVertex3d(0, 0, scale.getZ());
     glEnd();
 
     glBegin(GL_QUADS);
     glColor3f(0, 0, color.getZ());
-    glVertex3d(0, -scale.getY(), 0);
-    glVertex3d(scale.getX(), -scale.getY(), 0);
-    glVertex3d(scale.getX(), -scale.getY(), scale.getZ());
-    glVertex3d(0, -scale.getY(), scale.getZ());
+    glVertex3d(0, scale.getY(), 0);
+    glVertex3d(scale.getX(), scale.getY(), 0);
+    glVertex3d(scale.getX(), scale.getY(), scale.getZ());
+    glVertex3d(0, scale.getY(), scale.getZ());
     glEnd();
 
 
@@ -57,9 +57,10 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
     glColor3f(0.5f, 0.5f, color.getZ());
     glVertex3d(0, 0, scale.getZ());
     glVertex3d(scale.getX(), 0, scale.getZ());
-    glVertex3d(scale.getX(), -scale.getY(), scale.getZ());
-    glVertex3d(0, -scale.getY(), scale.getZ());
+    glVertex3d(scale.getX(), scale.getY(), scale.getZ());
+    glVertex3d(0, scale.getY(), scale.getZ());
     glEnd();
+
     glEndList();
 
 }

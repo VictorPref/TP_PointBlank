@@ -24,22 +24,22 @@ Input InputManager::GetKeysInput(SDL_Joystick* controller) {
 
     if(controller)
     {
-        if( SDL_JoystickGetAxis(controller, 1) < -10000 )
+        if( SDL_JoystickGetAxis(controller, 0) < -10000 )
         {
             toRet.leftRightDir = -1;
         }
-        else if( SDL_JoystickGetAxis(controller, 1) > 10000 )
+        else if( SDL_JoystickGetAxis(controller, 0) > 10000 )
         {
             toRet.leftRightDir = 1;
         }
 
-        if( SDL_JoystickGetAxis(controller, 0) < -10000 )
-        {
-            toRet.upDownDir = -1;
-        }
-        else if( SDL_JoystickGetAxis(controller, 0) > 10000 )
+        if( SDL_JoystickGetAxis(controller, 1) < -10000 )
         {
             toRet.upDownDir = 1;
+        }
+        else if( SDL_JoystickGetAxis(controller, 1) > 10000 )
+        {
+            toRet.upDownDir = -1;
         }
 
         if( SDL_JoystickGetAxis(controller, 3) < -10000 )

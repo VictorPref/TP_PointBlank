@@ -7,6 +7,7 @@
 
 #include "../Player/Player.h"
 #include "vector"
+#include "../GameObject/Component/Vector3.h"
 
 class PlayerManager {
 
@@ -14,6 +15,9 @@ class PlayerManager {
 
 public:
 
+    void CreatePlayer(std::vector<Vector3> spawnPos);
+
+    void  DrawPplayer(int id);
     void UpdateAllPlayers();
 
 };

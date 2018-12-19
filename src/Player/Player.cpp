@@ -3,48 +3,96 @@
 //
 
 #include "Player.h"
+#include "../Manager/InputManager.h"
+
 
 void Player::Update(std::vector<GameObject*> level) {
 
-    std::vector<GameObject*> collision;
+    std::vector<GameObject *> collision;
 
-    for(int i = 0 ; i < level.size();i++){
-        GameObject* go =level[i];
-        if(AABB::TestCollision(this,go)){
+    input = InputManager::getInstance()->GetKeysInput(controller);
+
+    for (int i = 0; i < level.size(); i++) {
+        GameObject *go = level[i];
+        if (AABB::TestCollision(this, go)) {
 
             collision.push_back(go);
 
         }
     }
 
-    Vector3 direction(0,0,0);
-    if(collision.size() > 0){
 
-      if(canFall(collision)){
+    Vector3 direction(0, 0, 0);
+
+
+    if (collision.size() > 0) {
+
+        if (canFall(collision)) {
             direction.setZ(-1);
-         }
+        } else if (canJump(collision)) {
+            //   direction.setZ(1);
+        }
+
+        if (input.leftRightDir == 1) {
+            //Bouger Droite
+            std::cout<<"Droite"<<std::endl;
+            Vector3 oldPos = transform;
+            transform = MoveRight();
+            canMove(collision,oldPos);
+
+        } else if (input.leftRightDir == -1) {
+            //Bouger Gauche
+            std::cout<<"Gauche"<<std::endl;
+            Vector3 oldPos = transform;
+            transform = MoveLeft();
+            canMove(collision,oldPos);
+        }
 
 
-    }else{
-        direction.setZ(-1);
+        if (input.upDownDir == 1) {
+            //Bouger Haut
+            std::cout<<"Haut"<<std::endl;
+            Vector3 oldPos = transform;
+            transform =  MoveForward();
+            canMove(collision,oldPos);
+
+
+        } else if (input.upDownDir == -1) {
+            //Bouger Bas
+            std::cout<<"Down"<<std::endl;
+            Vector3 oldPos = transform;
+            transform =  MoveBackward();
+            canMove(collision,oldPos);
+
+        }
     }
+    else {
+            direction.setZ(-1);
+        }
 
-    transform= transform +direction;
+        transform = transform + direction;
 }
 
-Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color) : Cube(
-        transform, scale, rotation, color) {}
 
-Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
-               int divisionTexture) : Cube(transform, scale, rotation, pathTexture, divisionTexture) {}
+
+
+
+
+
 
 bool Player::canJump(std::vector<GameObject *> collision) {
 
+    for(int i = 0 ; i < collision.size();i++){
 
+        int z = collision[i]->getTransform().getZ() ;
 
+        if(z >=  transform.getZ() + scale.getZ()){
+            return false;
+        }
 
+    }
 
-    return false;
+    return true;
 }
 
 bool Player::canFall(std::vector<GameObject *> collision) {
@@ -55,6 +103,7 @@ bool Player::canFall(std::vector<GameObject *> collision) {
         int z = collision[i]->getTransform().getZ() + collision[i]->getScale().getZ();
 
         if(z <=  transform.getZ()){
+            transform.setZ(z);
             return false;
         }
 
@@ -62,3 +111,84 @@ bool Player::canFall(std::vector<GameObject *> collision) {
 
     return true;
 }
+
+Vector3 Player::MoveForward()
+{
+    double x = transform.getX();
+    double y = transform.getY();
+    double angle = rotation.getZ();
+
+    x -= vitesse * sinf(angle * 3.1416 /180);
+    y += vitesse *cosf(angle * 3.1416 /180);
+
+    return Vector3(x,y,transform.getZ());
+}
+
+Vector3 Player::MoveBackward()
+{
+    double x = transform.getX();
+    double y = transform.getY();
+    double angle = rotation.getZ();
+
+    x += vitesse * sinf(angle * 3.1416 /180);
+    y -= vitesse *cosf(angle * 3.1416 /180);
+
+    return Vector3(x,y,transform.getZ());
+}
+
+Vector3 Player::MoveLeft()
+{
+    double x = transform.getX();
+    double y = transform.getY();
+    double angle = rotation.getZ();
+    x -= vitesse * sinf((angle-90) * 3.1416 /180);
+    y += vitesse *cosf((angle-90) * 3.1416 /180);
+
+    return Vector3(x,y,transform.getZ());
+
+}
+
+Vector3 Player::MoveRight()
+{
+    double x = transform.getX();
+    double y = transform.getY();
+    double angle = rotation.getZ();
+
+    x -= vitesse * sinf((angle+90) * 3.1416 /180);
+    y += vitesse *cosf((angle+90) * 3.1416 /180);
+
+    return Vector3(x,y,transform.getZ());
+}
+
+void Player::setController(SDL_Joystick *controller) {
+    Player::controller = controller;
+}
+
+void Player::canMove(std::vector<GameObject*> collision,Vector3 oldPos) {
+
+
+    bool canMove = true;
+    for(int i =0;i< collision.size();i++) {
+
+        int z = collision[i]->getTransform().getZ() + collision[i]->getScale().getZ();
+
+        if(z > transform.getZ()) {
+            if (AABB::TestCollision(this, collision[i])) {
+                std::cout<<"Can't move"<<std::endl;
+                canMove = false;
+            }
+        }
+    }
+
+    if(!canMove) {
+        transform = oldPos;
+    }
+
+
+}
+
+Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color) : Cube(
+        transform, scale, rotation, color) {}
+
+Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
+               int divisionTexture) : Cube(transform, scale, rotation, pathTexture, divisionTexture) {}

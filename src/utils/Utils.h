@@ -5,8 +5,10 @@
 #ifndef OPENGLTEST1_UTILS_H
 #define OPENGLTEST1_UTILS_H
 
-
+#include "../GameObject/GameObject.h"
 class Utils {
+
+	static std::vector<GameObject*> level;
 public:
 	enum Direction { LEFT, TOP, RIGHT, DOWN};
 	static void MakeWhiteSquare(float w, float h, float x, float y, float angle, bool darker);
@@ -16,6 +18,10 @@ public:
 	static Direction ChooseDirection(Direction &lastDir);
 	static void MakeSkybox(int timeOfDay, float w, float x, float y, float angle);
 	static void GenerateWorld(int timeOfDay);
+
+	const std::vector<GameObject *> &getLevel() const;
+
+
 };
 
 
