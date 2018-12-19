@@ -84,7 +84,9 @@ void GameObject::draw() {
 
     glPushMatrix();
     glTranslated(transform.getX(),transform.getY(),transform.getZ());
-    glRotated(1,rotation.getX(),rotation.getY(),rotation.getZ());
+    glRotated(rotation.getX(),1,0,1);
+    glRotated(rotation.getY(),0,1,0);
+    glRotated(rotation.getZ(),0,0,1);
 
     glCallList(idGameObject);
 

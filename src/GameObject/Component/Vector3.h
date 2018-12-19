@@ -27,6 +27,11 @@ public:
 
     void setZ(double z);
 
+    Vector3 operator-(Vector3 b);
+    Vector3 operator+(Vector3 b);
+
+    static Vector3 Max(Vector3 a,Vector3 b);
+
 };
 
 

@@ -29,7 +29,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(
         ${PROJECT_NAME_VALUE}
-        ${source_files})
+        ${source_files} src/Collision/AABB.cpp src/Collision/AABB.h)
 
 
 INCLUDE(FindPkgConfig)

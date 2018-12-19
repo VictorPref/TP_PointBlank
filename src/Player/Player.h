@@ -7,13 +7,22 @@
 
 #include "../GameObject/Primitive/Cube.h"
 #include "Input.h"
+#include "../Collision/AABB.h"
 class Player: public Cube {
 
     int id;
     SDL_Joystick* controller;
 
 public:
-    void Update();
+    void Update(std::vector<GameObject*> level);
+
+    Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color);
+
+    Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
+           int divisionTexture);
+
+    bool canJump(std::vector<GameObject*> collision);
+    bool canFall(std::vector<GameObject*> collision);
 
 
 };
