@@ -9,7 +9,7 @@
 #include "vector"
 #include "../GameObject/Component/Vector3.h"
 #include "../Jeu/Jeu.h"
-
+class Jeu;
 class PlayerManager {
 
     std::vector<Player> playerManager;

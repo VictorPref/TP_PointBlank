@@ -14,10 +14,10 @@
 #include "../Player/Player.h"
 #include "../Manager/PlayerManager.h"
 #include "../GameObject/GameObject.h"
-
+class PlayerManager;
 class Jeu {
 
-    PlayerManager playerManager;
+    PlayerManager* playerManager;
 
 
 public:

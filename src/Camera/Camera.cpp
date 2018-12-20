@@ -29,8 +29,8 @@ void Camera::LookDown() {
 }
 
 void Camera::Look(Vector3 &playerTransform) {
-    glRotatef(angleXRotationCamera,1,0,0);
-    glRotatef(angleZRotationCamera,0,1,0);
+    //glRotatef(angleXRotationCamera,1,0,0);
+    //glRotatef(angleZRotationCamera,0,1,0);
     gluLookAt(playerTransform.getX(),playerTransform.getY(), playerTransform.getZ()+1,playerTransform.getX(), playerTransform.getY()+1, playerTransform.getZ()+1, 0, 0, 1);
 
 }

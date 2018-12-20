@@ -37,7 +37,7 @@ public:
 
     virtual ~GameObject();
 
-    const Vector3 &getTransform() const;
+    Vector3 &getTransform() ;
 
     void setTransform(const Vector3 &transform);
 
