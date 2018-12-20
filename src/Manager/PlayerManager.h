@@ -12,12 +12,14 @@
 class PlayerManager {
 
     std::vector<Player> playerManager;
+    static PlayerManager* instance;
 
 public:
-
+    static PlayerManager* getInstance();
     void CreatePlayer(std::vector<Vector3> spawnPos);
-
-    void  DrawPplayer(int id);
+    void getPlayer(int id);
+    void drawPlayers();
+    void drawPlayer(int id);
     void UpdateAllPlayers();
 
 };

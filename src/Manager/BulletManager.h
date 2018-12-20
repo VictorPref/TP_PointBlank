@@ -5,8 +5,22 @@
 #ifndef TP_POINTBLANK_BULLETMANAGER_H
 #define TP_POINTBLANK_BULLETMANAGER_H
 
+#include "vector"
+#include "../GameObject/Primitive/Bullet.h"
 
 class BulletManager {
+
+    std::vector<Bullet*> bullets;
+    static BulletManager* instance;
+    BulletManager();
+
+public:
+
+    static BulletManager* getInstance();
+    void CreateBullet(int id);
+    void UpdateBullets();
+
+
 
 };
 

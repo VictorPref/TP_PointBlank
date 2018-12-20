@@ -3,3 +3,25 @@
 //
 
 #include "BulletManager.h"
+
+BulletManager* BulletManager::instance = nullptr;
+BulletManager* BulletManager::getInstance()
+{
+    if (!instance)
+    {
+        instance = new BulletManager();
+    }
+
+    return instance;
+}
+
+
+void BulletManager::CreateBullet(int id) {
+
+}
+
+void BulletManager::UpdateBullets() {
+
+}
+
+BulletManager::BulletManager() {}
