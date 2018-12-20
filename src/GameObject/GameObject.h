@@ -16,6 +16,7 @@
 class GameObject {
 
 protected:
+    static int listSave;
     Vector3 transform;
     Vector3 scale;
     Vector3 rotation;

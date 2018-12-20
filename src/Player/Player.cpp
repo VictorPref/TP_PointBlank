@@ -24,6 +24,28 @@ void Player::Update(std::vector<GameObject*> level) {
 
     Vector3 direction(0, 0, 0);
 
+    camera.Look(transform);
+
+    if(input.rt){
+        bulletManager->CreateBullet(this);
+    }
+
+
+    if(input.leftRightCam == 1){
+        camera.LookRight();
+        rotation.setZ(rotation.getZ()-1);
+    }
+    if(input.leftRightCam == -1){
+        camera.LookLeft();
+        rotation.setZ(rotation.getZ()+1);
+    }
+    if(input.upDownCam == -1){
+        camera.LookUp();
+
+    }
+    if(input.upDownCam == 1){
+        camera.LookDown();
+    }
 
     if (collision.size() > 0) {
 
@@ -33,16 +55,14 @@ void Player::Update(std::vector<GameObject*> level) {
             //   direction.setZ(1);
         }
 
-        if (input.leftRightDir == 1) {
+        if (input.leftRightDir == -1) {
             //Bouger Droite
-            std::cout<<"Droite"<<std::endl;
             Vector3 oldPos = transform;
             transform = MoveRight();
             canMove(collision,oldPos);
 
-        } else if (input.leftRightDir == -1) {
+        } else if (input.leftRightDir == 1) {
             //Bouger Gauche
-            std::cout<<"Gauche"<<std::endl;
             Vector3 oldPos = transform;
             transform = MoveLeft();
             canMove(collision,oldPos);
@@ -51,7 +71,6 @@ void Player::Update(std::vector<GameObject*> level) {
 
         if (input.upDownDir == 1) {
             //Bouger Haut
-            std::cout<<"Haut"<<std::endl;
             Vector3 oldPos = transform;
             transform =  MoveForward();
             canMove(collision,oldPos);
@@ -59,7 +78,6 @@ void Player::Update(std::vector<GameObject*> level) {
 
         } else if (input.upDownDir == -1) {
             //Bouger Bas
-            std::cout<<"Down"<<std::endl;
             Vector3 oldPos = transform;
             transform =  MoveBackward();
             canMove(collision,oldPos);
@@ -187,8 +205,24 @@ void Player::canMove(std::vector<GameObject*> collision,Vector3 oldPos) {
 
 }
 
-Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color) : Cube(
-        transform, scale, rotation, color) {}
+
+int Player::getId() const {
+    return id;
+}
+
+Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color, int id)
+        : Cube(transform, scale, rotation, color), id(id) {
+
+    bulletManager = BulletManager::getInstance();
+
+    camera = {transform};
+}
 
 Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
-               int divisionTexture) : Cube(transform, scale, rotation, pathTexture, divisionTexture) {}
+               int divisionTexture, int id) : Cube(transform, scale, rotation, pathTexture, divisionTexture), id(id) {
+
+
+    bulletManager = BulletManager::getInstance();
+}
+
+

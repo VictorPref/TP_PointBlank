@@ -7,7 +7,8 @@
 
 #include "vector"
 #include "../GameObject/Primitive/Bullet.h"
-
+#include "../Player/Player.h"
+class Player;
 class BulletManager {
 
     std::vector<Bullet*> bullets;
@@ -17,8 +18,9 @@ class BulletManager {
 public:
 
     static BulletManager* getInstance();
-    void CreateBullet(int id);
+    void CreateBullet(Player* player);
     void UpdateBullets();
+    void DrawBullets();
 
 
 

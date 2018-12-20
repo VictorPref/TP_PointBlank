@@ -9,22 +9,25 @@
 #include "Input.h"
 #include "../Collision/AABB.h"
 #include "../Manager/InputManager.h"
+#include "../Manager/BulletManager.h"
+#include "../Camera/Camera.h"
+class BulletManager;
 class Player: public Cube {
 
     int id;
     SDL_Joystick* controller;
     double vitesse = 1;
     Input input;
+    BulletManager* bulletManager;
+    Camera  camera;
 
 public:
     void Update(std::vector<GameObject*> level);
 
-    Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color);
+    Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const Vector3 &color, int id);
 
     Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
-           int divisionTexture);
-
-
+           int divisionTexture, int id);
 
     bool canJump(std::vector<GameObject*> collision);
     bool canFall(std::vector<GameObject*> collision);
@@ -44,6 +47,7 @@ public:
 
     void setController(SDL_Joystick *controller);
 
+    int getId() const;
 
 
 };

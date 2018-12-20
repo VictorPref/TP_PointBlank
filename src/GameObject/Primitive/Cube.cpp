@@ -9,7 +9,7 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
 
 
 
-    idGameObject = glGenLists(1);
+    idGameObject = glGenLists(listSave);
     glNewList(idGameObject, GL_COMPILE);
     glBegin(GL_QUADS);
     glColor3f(color.getX(), 0, 0);
@@ -28,7 +28,7 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
     glEnd();
 
     glBegin(GL_QUADS);
-    glColor3f(0, 0, 0);
+    glColor3f(color.getX()/2, color.getY(), 0);
     glVertex3d(scale.getX(), 0, 0);
     glVertex3d(scale.getX(), 0, scale.getZ());
     glVertex3d(scale.getX(), scale.getY(), scale.getZ());
@@ -62,7 +62,7 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
     glEnd();
 
     glEndList();
-
+    listSave++;
 }
 
 Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
@@ -70,7 +70,7 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
 
 
 
-    idGameObject = glGenLists(1);
+    idGameObject = glGenLists(listSave);
     glNewList(idGameObject, GL_COMPILE);
 
     glBindTexture(GL_TEXTURE_2D, texture.getIdTexture());
@@ -84,7 +84,7 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
 
 
     glBegin(GL_QUADS);
-    glTexCoord2d(0,0);glVertex3d(0, 0, 0);
+    glTexCoord2d(0,0);glVertex3d(color.getX(), color.getY()/2, 0);
     glTexCoord2d(divisionTexture,0);glVertex3d(scale.getX(), 0, 0);
     glTexCoord2d(divisionTexture,divisionTexture);glVertex3d(scale.getX(), 0, scale.getZ());
     glTexCoord2d(0,divisionTexture);glVertex3d(0, 0, scale.getZ());
@@ -123,6 +123,6 @@ Cube::Cube(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotati
     glEndList();
 
 
-
+listSave++;
 
 }

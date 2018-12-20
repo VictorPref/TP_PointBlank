@@ -9,7 +9,7 @@ private:
     float angleZRotationCamera = 0;
     float angleXRotationCamera = 0;
     int angleMaxView = 30;
-    Vector3* playerTransform;
+    Vector3 playerTransform;
 
 public:
     Camera();
@@ -21,9 +21,9 @@ public:
     void LookUp();
     void LookDown();
 
-    void Look();
+    void Look(Vector3 &playerTransform);
     void Update();
 
-    Camera(Vector3 *playerTransform);
+    Camera(const Vector3 &playerTransform);
 };
 
