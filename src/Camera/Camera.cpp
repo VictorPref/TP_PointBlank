@@ -30,11 +30,12 @@ void Camera::LookDown() {
 
 void Camera::Look() {
 
-    gluLookAt(positionXPlayer,positionYPlayer, positionZPlayer,positionXPlayer, positionYPlayer+1, positionZPlayer, 0, 0, 1);
+    gluLookAt(playerTransform->getX(),playerTransform->getY(), playerTransform->getZ(),playerTransform->getX(), playerTransform->getY()+1, playerTransform->getZ(), 0, 0, 1);
 
 }
 
-Camera::Camera(float positionXPlayer, float positionYPlayer, float positionZPlayer) : positionXPlayer(positionXPlayer),
-                                                                                      positionYPlayer(positionYPlayer),
-                                                                                      positionZPlayer(
-                                                                                              positionZPlayer) {}
+void Camera::Update() {
+
+}
+
+Camera::Camera(Vector3 *playerTransform) : playerTransform(playerTransform) {}
