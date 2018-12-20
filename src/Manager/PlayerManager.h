@@ -8,11 +8,13 @@
 #include "../Player/Player.h"
 #include "vector"
 #include "../GameObject/Component/Vector3.h"
+#include "../Jeu/Jeu.h"
 
 class PlayerManager {
 
     std::vector<Player> playerManager;
     static PlayerManager* instance;
+    Jeu* jeu;
 
 public:
     static PlayerManager* getInstance();
@@ -20,7 +22,7 @@ public:
     void getPlayer(int id);
     void drawPlayers();
     void drawPlayer(int id);
-    void UpdateAllPlayers();
+    void UpdateAllPlayers(Jeu* jeu);
 
 };
 

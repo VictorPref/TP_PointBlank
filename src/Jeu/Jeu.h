@@ -9,6 +9,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <random>
+#include <vector>
 #include <time.h>
 #include "../Player/Player.h"
 #include "../Manager/PlayerManager.h"
@@ -24,12 +25,17 @@ public:
     void demarrerJeu();
     void nettoyer();
 	SDL_Window* win;
-
-
+	std::vector<Player> players;
+	std::vector<GameObject*> level;
+	bool isRunning;
+	int timeOfDay;
+	void dessinerSurRender();
+	void Update();
+	
 private:
     void effacer();
-    void dessinerSurRender();
-    void Update();
+  
+    
 };
 
 

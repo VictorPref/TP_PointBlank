@@ -18,7 +18,7 @@ public:
 	static Direction ChooseDirection(Direction &lastDir);
 	static void MakeSkybox(int timeOfDay, float w, float x, float y, float angle);
 	static void GenerateWorld(int timeOfDay);
-
+	static void DrawSkybox();
 	const std::vector<GameObject *> &getLevel() const;
 
 

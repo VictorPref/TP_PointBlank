@@ -151,11 +151,8 @@ void Utils::GenerateWorld(int timeOfDay)
 		glPopMatrix();
 		//end brouillard
 		
-		
-		Utils::MakeSkybox(timeOfDay, 175, 0, 0, 0);
 		//effacer le tampon d’affichage
 		for (GameObject *c : cubeList) {
-			c->draw();
 			level.push_back(c);
 		}
 		
@@ -167,16 +164,19 @@ void Utils::GenerateWorld(int timeOfDay)
 			Vector3 q =c->getTransform();
 			c->setTransform(q+t);
 			c->setRotation(Vector3(0,0,180));
-			c->draw();
 			level.push_back(c);
 		}
 		
 	//	glPopMatrix();
 	}
+}
 
-
-
-
+void Utils::DrawSkybox()
+{
+	for(GameObject* go : level)
+	{
+		go->draw();
+	}
 	
 }
 

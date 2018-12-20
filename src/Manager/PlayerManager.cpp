@@ -11,14 +11,14 @@ PlayerManager* PlayerManager::getInstance()
     {
         instance = new PlayerManager();
     }
-
+    
     return instance;
 }
-
-
-
-void PlayerManager::UpdateAllPlayers() {
-
+void PlayerManager::UpdateAllPlayers(Jeu* jeu) {
+    for(Player p : jeu->players)
+    {
+        p.Update(jeu->level);
+    }
 }
 
 void PlayerManager::CreatePlayer(std::vector<Vector3> spawnPos) {
