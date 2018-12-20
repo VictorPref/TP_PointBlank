@@ -5,7 +5,7 @@
 #include "GameObject.h"
 #include "../utils/sdlglutils.h"
 int GameObject::listSave = 1;
-const Vector3 &GameObject::getTransform() const {
+Vector3 &GameObject::getTransform() {
     return transform;
 }
 
