@@ -24,7 +24,7 @@ void Player::Update(std::vector<GameObject*> level) {
 
     Vector3 direction(0, 0, 0);
 
-    camera.Look(transform);
+    camera.Look(transform, rotation);
 
     if(input.rt){
         bulletManager->CreateBullet(this);
@@ -45,6 +45,10 @@ void Player::Update(std::vector<GameObject*> level) {
     }
     if(input.upDownCam == 1){
         camera.LookDown();
+    }
+
+    if(input.A){
+        transform.setZ(transform.getZ()+40);
     }
 
     if (collision.size() > 0) {
@@ -223,6 +227,10 @@ Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &ro
 
 
     bulletManager = BulletManager::getInstance();
+}
+
+ Camera &Player::getCamera() {
+    return camera;
 }
 
 

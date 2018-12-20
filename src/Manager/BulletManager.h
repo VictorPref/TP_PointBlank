@@ -8,7 +8,11 @@
 #include "vector"
 #include "../GameObject/Primitive/Bullet.h"
 #include "../Player/Player.h"
+
+class Camera;
 class Player;
+
+
 class BulletManager {
 
     std::vector<Bullet*> bullets;

@@ -20,6 +20,7 @@ class Player: public Cube {
     Input input;
     BulletManager* bulletManager;
     Camera  camera;
+    float health =1;
 
 public:
     void Update(std::vector<GameObject*> level);
@@ -46,6 +47,8 @@ public:
     Vector3 MoveRight();
 
     void setController(SDL_Joystick *controller);
+
+    Camera &getCamera();
 
     int getId() const;
 

@@ -4,6 +4,7 @@
 
 #include "BulletManager.h"
 
+
 BulletManager* BulletManager::instance = nullptr;
 BulletManager* BulletManager::getInstance()
 {
@@ -20,11 +21,17 @@ void BulletManager::CreateBullet(Player* player) {
 
 
     Vector3 t = player->getTransform();
-    Vector3 f = player->getRotation();
-    Vector3 r(0,0,0);
-    Bullet* b = new Bullet(t,Vector3(1,500,1),f + r,Vector3(255,255,255),player->getId());
+    Camera camera = player->getCamera();
+    Vector3 r = camera.getRotation();
+
+
+
+
+    Bullet* b = new Bullet(t,Vector3(1,100,1),r,Vector3(255,255,255),player->getId());
     bullets.push_back(b);
 
+
+    std::cout<<"X: "<<r.getX()<<"  Y: "<<r.getY()<<"  Z: "<<r.getZ()<<std::endl;
 }
 
 void BulletManager::UpdateBullets() {
