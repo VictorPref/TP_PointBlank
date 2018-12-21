@@ -192,3 +192,7 @@ void Jeu::Update(){
 	bulletManager->UpdateBullets();
 
 }
+
+Jeu::~Jeu() {
+delete sol;
+}

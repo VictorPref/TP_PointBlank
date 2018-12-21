@@ -20,6 +20,9 @@ public:
     static PlayerManager* getInstance();
     void CreatePlayer(std::vector<Vector3> spawnPos);
     void getPlayer(int id);
+
+    virtual ~PlayerManager();
+
     void drawPlayers();
     void drawPlayer(int id);
     void UpdateAllPlayers(std::vector<GameObject*> level);

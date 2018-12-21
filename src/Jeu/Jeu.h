@@ -18,26 +18,27 @@
 class PlayerManager;
 class Jeu {
 
-    PlayerManager* playerManager;
+    PlayerManager* playerManager = nullptr;
 
 
 public:
     void initialisation();
     void demarrerJeu();
     void nettoyer();
-	SDL_Window* win;
+	SDL_Window* win = nullptr;
 	std::vector<Player> players;
 	std::vector<GameObject*> level;
 	bool isRunning;
 	int timeOfDay;
 	void dessinerSurRender();
 	void Update();
-	
+
+	virtual ~Jeu();
+
 private:
     void effacer();
-	Cube* sol ;
+	Cube* sol = nullptr ;
   BulletManager* bulletManager;
-	Player* player;
 	SDL_GLContext context;
     
 };

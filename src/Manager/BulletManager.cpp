@@ -24,18 +24,7 @@ void BulletManager::CreateBullet(Player* player) {
     Camera camera = player->getCamera();
     Vector3 r = camera.getRotation();
     std::cout << r.getX();
-  //  if(r.getZ() >= 180){
-  //      double xtemp = r.getX();
-  //      r.setX(-r.getX());
-       // r.setY(-r.getY());
-  //      r.setZ(-r.getZ());
-  ///  }
-   //else{
-   //    double xtemp = r.getX();
-   //    r.setX(r.getZ());
-   //    // r.setY(-r.getY());
-   //    r.setZ(xtemp);
-   //}
+
 
    if(r.getZ() > 90 && r.getZ() < 180){
        r.setX(180-r.getX());
@@ -43,14 +32,6 @@ void BulletManager::CreateBullet(Player* player) {
        r.setX(270-r.getX());
    }
 
-
-
-    //if(r.getX() > 30){
-  //      r.setX(30);
-  //  }
-   // else if(r.getX() < -30){
-   //     r.setX(-30);
-   // }
 
 
 
@@ -86,4 +67,11 @@ void BulletManager::DrawBullets() {
 
     }
 
+}
+
+BulletManager::~BulletManager() {
+
+    for(int i = 0 ; i < bullets.size();i++){
+        delete bullets[i];
+    }
 }

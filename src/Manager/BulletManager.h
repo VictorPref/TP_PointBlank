@@ -20,6 +20,9 @@ class BulletManager {
     BulletManager();
 
 public:
+    virtual ~BulletManager();
+
+public:
 
     static BulletManager* getInstance();
     void CreateBullet(Player* player);

@@ -71,3 +71,9 @@ void PlayerManager::DrawUIPlayer( int id) {
 void PlayerManager::UpdatePlayer(int id, std::vector<GameObject *> level) {
     playerManager[id]->Update(level);
 }
+
+PlayerManager::~PlayerManager() {
+for(int i = 0 ; i < playerManager.size();i++){
+    delete playerManager[i];
+}
+}
