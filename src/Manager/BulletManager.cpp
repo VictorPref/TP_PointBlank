@@ -65,6 +65,13 @@ void BulletManager::CreateBullet(Player* player) {
 
 void BulletManager::UpdateBullets() {
 
+    for(int i = 0 ; i <bullets.size();i++){
+
+        if(bullets[i]->getTme() < SDL_GetTicks()){
+            bullets[i]->setAlive(false);
+        }
+    }
+
 }
 
 BulletManager::BulletManager() {}
@@ -73,7 +80,9 @@ void BulletManager::DrawBullets() {
 
     for(int i = 0; i < bullets.size();i++){
 
-        bullets[i]->draw();
+        if(bullets[i]->isAlive()) {
+            bullets[i]->draw();
+        }
 
     }
 

@@ -14,6 +14,7 @@
 #include "../Player/Player.h"
 #include "../Manager/PlayerManager.h"
 #include "../GameObject/GameObject.h"
+#include "vector"
 class PlayerManager;
 class Jeu {
 
@@ -34,7 +35,10 @@ public:
 	
 private:
     void effacer();
-  
+	Cube* sol ;
+  BulletManager* bulletManager;
+	Player* player;
+	SDL_GLContext context;
     
 };
 

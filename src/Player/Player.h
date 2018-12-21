@@ -11,6 +11,7 @@
 #include "../Manager/InputManager.h"
 #include "../Manager/BulletManager.h"
 #include "../Camera/Camera.h"
+#include "../GameObject/Component/UI.h"
 class BulletManager;
 class Player: public Cube {
 
@@ -21,6 +22,8 @@ class Player: public Cube {
     BulletManager* bulletManager;
     Camera  camera;
     float health =1;
+    UI* ui;
+
 
 public:
     void Update(std::vector<GameObject*> level);
@@ -51,6 +54,10 @@ public:
     Camera &getCamera();
 
     int getId() const;
+
+    UI *getUi() const;
+
+    float getHealth() const;
 
 
 };

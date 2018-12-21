@@ -48,7 +48,7 @@ void Menu::UpdateModel(SDL_Event *event) {
 
         if( SDL_JoystickGetAxis(gGameController, 1) < -10000 )
         {
-         if(selectedMenuItem == 1)
+            if(selectedMenuItem == 1)
                 selectedMenuItem--;
 
         }
@@ -61,12 +61,18 @@ void Menu::UpdateModel(SDL_Event *event) {
 
         if(SDL_JoystickGetButton(gGameController, SDL_CONTROLLER_BUTTON_A) > 0 )
         {
-            isRunning = false;
-        }
+            if(selectedMenuItem == 0)
+            {
 
-        if( SDL_JoystickGetAxis(gGameController, 3) > 10000 )
-        {
-            input.Show();
+                if(SDL_NumJoysticks() > 1)
+                    isRunning = false;
+                else
+                    std::cout << "pas assez de manettes" << std::endl;
+            }
+            else
+            {
+                isRunning = false;
+            }
         }
     }
 
@@ -145,6 +151,9 @@ void Menu::Init() {
     }
 
     selectionImageSize =  width/18;
+
+    SDL_SetWindowFullscreen(window,
+                            SDL_WINDOW_FULLSCREEN);
 }
 
 void Menu::Start() {

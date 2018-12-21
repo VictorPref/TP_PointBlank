@@ -12,7 +12,7 @@
 class Jeu;
 class PlayerManager {
 
-    std::vector<Player> playerManager;
+    std::vector<Player*> playerManager;
     static PlayerManager* instance;
     Jeu* jeu;
 
@@ -22,7 +22,10 @@ public:
     void getPlayer(int id);
     void drawPlayers();
     void drawPlayer(int id);
-    void UpdateAllPlayers(Jeu* jeu);
+    void UpdateAllPlayers(std::vector<GameObject*> level);
+    void DrawUIPlayers();
+    void DrawUIPlayer( int id);
+    void UpdatePlayer(int id,std::vector<GameObject*> level);
 
 };
 

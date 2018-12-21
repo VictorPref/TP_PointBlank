@@ -181,7 +181,7 @@ Vector3 Player::MoveRight()
 }
 
 void Player::setController(SDL_Joystick *controller) {
-    Player::controller = controller;
+    this->controller = controller;
 }
 
 void Player::canMove(std::vector<GameObject*> collision,Vector3 oldPos) {
@@ -218,6 +218,8 @@ Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &ro
     bulletManager = BulletManager::getInstance();
 
     camera = {transform};
+
+    ui = new UI(1920,1080);
 }
 
 Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &rotation, const std::string &pathTexture,
@@ -225,10 +227,20 @@ Player::Player(const Vector3 &transform, const Vector3 &scale, const Vector3 &ro
 
 
     bulletManager = BulletManager::getInstance();
+
+    ui = new UI(1920,1080);
 }
 
  Camera &Player::getCamera() {
     return camera;
+}
+
+UI *Player::getUi() const {
+    return ui;
+}
+
+float Player::getHealth() const {
+    return health;
 }
 
 
