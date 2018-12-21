@@ -23,6 +23,26 @@ void BulletManager::CreateBullet(Player* player) {
     Vector3 t = player->getTransform();
     Camera camera = player->getCamera();
     Vector3 r = camera.getRotation();
+    std::cout << r.getX();
+    if(r.getZ() >= 180){
+        double xtemp = r.getX();
+        r.setX(-r.getX());
+       // r.setY(-r.getY());
+        r.setZ(-r.getZ());
+    }
+   //else{
+   //    double xtemp = r.getX();
+   //    r.setX(r.getZ());
+   //    // r.setY(-r.getY());
+   //    r.setZ(xtemp);
+   //}
+
+    if(r.getX() > 30){
+        r.setX(30);
+    }
+    else if(r.getX() < -30){
+        r.setX(-30);
+    }
 
 
 

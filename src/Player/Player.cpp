@@ -24,7 +24,7 @@ void Player::Update(std::vector<GameObject*> level) {
 
     Vector3 direction(0, 0, 0);
 
-    camera.Look(transform, rotation);
+    camera.Look(transform);
 
     if(input.rt){
         bulletManager->CreateBullet(this);

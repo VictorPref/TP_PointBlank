@@ -23,6 +23,7 @@ public:
 
     void Look(Vector3 &playerTransform);
     void Update();
+    Vector3 getRotation();
 
     Camera(const Vector3 &playerTransform);
 };
