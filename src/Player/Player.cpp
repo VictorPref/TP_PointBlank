@@ -41,10 +41,15 @@ void Player::Update(std::vector<GameObject*> level) {
     }
     if(input.upDownCam == -1){
         camera.LookUp();
-
+        if(rotation.getX() < 30) {
+          //  rotation.setX(rotation.getX() + 1);
+        }
     }
     if(input.upDownCam == 1){
         camera.LookDown();
+        if(rotation.getX() > -30) {
+           // rotation.setX(rotation.getX() - 1);
+        }
     }
 
     if(input.A){

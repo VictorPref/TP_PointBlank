@@ -10,17 +10,17 @@ void Camera::LookLeft() {
 
     angleZRotationCamera--;
 
-    if(angleZRotationCamera < 0){
-        angleZRotationCamera = 360;
-    }
+   // if(angleZRotationCamera < 0){
+   //     angleZRotationCamera = 360;
+  //  }
 }
 
 void Camera::LookRight() {
 
     angleZRotationCamera++;
-    if(angleZRotationCamera > 360){
-        angleZRotationCamera = 0;
-    }
+  //  if(angleZRotationCamera > 360){
+  //      angleZRotationCamera = 0;
+  //  }
 }
 
 void Camera::LookUp() {
