@@ -95,13 +95,6 @@ void Player::Update(std::vector<GameObject*> level) {
         transform = transform + direction;
 }
 
-
-
-
-
-
-
-
 bool Player::canJump(std::vector<GameObject *> collision) {
 
     for(int i = 0 ; i < collision.size();i++){
